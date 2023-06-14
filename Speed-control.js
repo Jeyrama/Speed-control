@@ -27,7 +27,7 @@ To calculate hourly speed you can use: (3600 * delta_distance).
 // Solution
 
 const gps = (s, x) => {
-  
+
   if (x.length<=1) {
     return 0;
   }
@@ -37,4 +37,12 @@ const gps = (s, x) => {
     output.push((x[i+1]-x[i])*3600/s);
   }
   return Math.max(...output);
+}
+
+// or
+
+function gps(s, x) {
+  if (x.length < 2) return 0;
+  let a = x.map((v, i, a) => 3600 * (v - (a[i - 1] || 0)) / s);
+  return Math.floor(Math.max.apply(null, a));
 }
