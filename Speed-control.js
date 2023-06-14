@@ -22,3 +22,7 @@ Note:
 With floats it can happen that results depends on the operations order. 
 To calculate hourly speed you can use: (3600 * delta_distance).
 */
+
+
+// Solution
+
